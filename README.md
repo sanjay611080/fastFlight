@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# FastFlight
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FastFlight is a modern flight booking application built using **React**, **Vite**, **Firebase** for authentication, **TailwindCSS** for styling, and **React Icons** for enhanced UI elements. The application allows users to view flight details, calculate the total price, and navigate between pages using a simple navbar.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Folder Structure](#folder-structure)
+- [Features](#features)
+- [Deployment](#deployment)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** - A JavaScript library for building user interfaces.
+- **Vite** - A fast build tool for modern web development.
+- **Firebase** - Authentication service for user management.
+- **TailwindCSS** - A utility-first CSS framework for styling.
+- **React Icons** - A collection of icons for React components.
+- **Vercel** - For deployment.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Setup
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Follow the steps below to get the project up and running on your local machine:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Clone the Repository
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```bash
+git clone https://github.com/your-username/fastflight.git
+cd fastflight
+
+### 2. Install dependencies
+
+```bash
+npm install
+
+### 3. Set Up Firebase
+This project uses Firebase for authentication. To integrate Firebase, follow these steps:
+
+Go to the Firebase Console.
+Create a new Firebase project.
+Set up Firebase Authentication (Email/Password method or other methods you prefer).
+Create a Firebase configuration file and copy the config keys provided by Firebase.
+
+```bash
+VITE_FIREBASE_API_KEY=your-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-auth-domain
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+VITE_FIREBASE_APP_ID=your-app-id
+
+### 4. Configure TailwindCSS
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+### 5. Run the application
+
+```bash
+npm run dev
+
+### 6. Features
+Navbar: A simple, responsive navigation bar for easy navigation between pages.
+Home Page: Displays available flight details with a feature to calculate total flight prices.
+About Page: A basic About page with information about the project.
+Authentication: Firebase-based authentication for login and user management.
+Responsive Design: Fully responsive UI using TailwindCSS.
+
+### 7. Deployed on vercel
+Link: https://fast-flight.vercel.app/
